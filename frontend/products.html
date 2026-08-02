@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - RecycleHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-recycle logo-icon"></i>
+                <div class="logo-text">
+                    <span class="brand-name">RecycleHub</span>
+                    <span class="brand-tagline">Smart Resale System</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="products.html" class="active"><i class="fa-solid fa-box"></i> Products</a></li>
+                <li><a href="add-product.html"><i class="fa-solid fa-plus-circle"></i> Add Product</a></li>
+                <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <div class="container mt-20">
+        <div class="products-banner">
+            <div class="banner-content">
+                <h2>Find Your Next Reusable Item</h2>
+                <p>Buy and sell recyclable and second-hand products.<br>Let's make a cleaner and greener planet.</p>
+            </div>
+            <div class="banner-graphic">
+                <i class="fa-solid fa-recycle bg-icon-left"></i>
+                <i class="fa-solid fa-earth-americas bg-icon-right"></i>
+                <i class="fa-solid fa-leaf bg-icon-leaf-1"></i>
+                <i class="fa-solid fa-leaf bg-icon-leaf-2"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter and Search -->
+    <div class="container filter-section">
+        <div class="filters-row">
+            <div class="filter-group">
+                <div class="select-wrapper">
+                    <i class="fa-solid fa-list filter-icon"></i>
+                    <select>
+                        <option>All Categories</option>
+                        <option>Furniture</option>
+                        <option>Plastic</option>
+                        <option>Books</option>
+                        <option>Sports</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </div>
+                <div class="select-wrapper">
+                    <i class="fa-solid fa-tag filter-icon"></i>
+                    <select>
+                        <option>All Conditions</option>
+                        <option>Used</option>
+                        <option>Reusable</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </div>
+            </div>
+            
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Search products...">
+            </div>
+            
+            <a href="add-product.html" class="btn btn-primary btn-add"><i class="fa-solid fa-plus"></i> Add Product</a>
+        </div>
+    </div>
+
+    <!-- Products Grid -->
+    <section class="container products-list-section">
+        <div class="section-header-row">
+            <h2>Available Products</h2>
+            <span class="product-count">Showing 4 products</span>
+        </div>
+
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product-details.html"><img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&q=80&w=400" alt="Wooden Chair"></a>
+                    <span class="status-tag tag-used">Used</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title-list">Wooden Chair</h3>
+                    <span class="badge category-furniture"><i class="fa-solid fa-leaf"></i> Furniture</span>
+                    <p class="product-desc-list">Good condition wooden chair, lightly used.</p>
+                    <div class="price-list">৳1,200</div>
+                    <div class="product-footer-list">
+                        <div class="seller"><i class="fa-regular fa-user"></i> Seller: Rahim</div>
+                        <a href="product-details.html" class="btn btn-view"><i class="fa-solid fa-cart-shopping"></i> View</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product-details.html"><img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=400" alt="Reusable Bottle"></a>
+                    <span class="status-tag tag-reusable">Reusable</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title-list">Reusable Bottle</h3>
+                    <span class="badge category-plastic"><i class="fa-solid fa-leaf"></i> Plastic</span>
+                    <p class="product-desc-list">Clean and reusable plastic bottle.</p>
+                    <div class="price-list">৳50</div>
+                    <div class="product-footer-list">
+                        <div class="seller"><i class="fa-regular fa-user"></i> Seller: Karim</div>
+                        <a href="product-details.html" class="btn btn-view"><i class="fa-solid fa-cart-shopping"></i> View</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product-details.html"><img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=400" alt="Second-hand Books"></a>
+                    <span class="status-tag tag-used">Used</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title-list">Second-hand Books</h3>
+                    <span class="badge category-books"><i class="fa-solid fa-book"></i> Books</span>
+                    <p class="product-desc-list">Good condition academic books.</p>
+                    <div class="price-list">৳300</div>
+                    <div class="product-footer-list">
+                        <div class="seller"><i class="fa-regular fa-user"></i> Seller: Nabila</div>
+                        <a href="product-details.html" class="btn btn-view"><i class="fa-solid fa-cart-shopping"></i> View</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product-details.html"><img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&q=80&w=400" alt="Old Bicycle"></a>
+                    <span class="status-tag tag-used">Used</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title-list">Old Bicycle</h3>
+                    <span class="badge category-sports"><i class="fa-solid fa-bicycle"></i> Sports</span>
+                    <p class="product-desc-list">Well-used but in working condition.</p>
+                    <div class="price-list">৳2,500</div>
+                    <div class="product-footer-list">
+                        <div class="seller"><i class="fa-regular fa-user"></i> Seller: Hasan</div>
+                        <a href="product-details.html" class="btn btn-view"><i class="fa-solid fa-cart-shopping"></i> View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="logo">
+                <i class="fa-solid fa-recycle logo-icon"></i>
+                <div class="logo-text">
+                    <span class="brand-name">RecycleHub</span>
+                    <span class="brand-tagline">Reduce Waste. Reuse More.</span>
+                </div>
+            </div>
+            <div class="footer-links-wrapper">
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li>|</li>
+                    <li><a href="products.html">Products</a></li>
+                    <li>|</li>
+                    <li><a href="add-product.html">Add Product</a></li>
+                    <li>|</li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>
