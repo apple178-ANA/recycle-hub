@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reusable Bottle - RecycleHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-recycle logo-icon"></i>
+                <div class="logo-text">
+                    <span class="brand-name">RecycleHub</span>
+                    <span class="brand-tagline">Smart Resale System</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="products.html" class="active"><i class="fa-solid fa-box"></i> Products</a></li>
+                <li><a href="add-product.html"><i class="fa-solid fa-plus-circle"></i> Add Product</a></li>
+                <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-30">
+        <a href="products.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Products</a>
+    </div>
+
+    <!-- Product Details Section -->
+    <section class="product-details-container container">
+        <div class="product-gallery">
+            <div class="main-image">
+                <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=600" alt="Reusable Bottle">
+            </div>
+            <div class="thumbnail-images">
+                <div class="thumbnail active">
+                    <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=150" alt="Thumbnail 1">
+                </div>
+                <div class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=150&rect=0,0,1000,1000" alt="Thumbnail 2">
+                </div>
+                <div class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=150&rect=100,100,800,800" alt="Thumbnail 3">
+                </div>
+            </div>
+        </div>
+
+        <div class="product-info-details">
+            <div class="title-price-row">
+                <h1>Reusable Bottle</h1>
+                <div class="price-big badge-green-bg">৳50</div>
+            </div>
+            
+            <div class="badge category-badge">
+                <i class="fa-solid fa-leaf"></i> Plastic
+            </div>
+
+            <ul class="meta-list">
+                <li><i class="fa-regular fa-user"></i> <span>Seller:</span> <strong>Karim</strong></li>
+                <li><i class="fa-solid fa-tag"></i> <span>Condition:</span> <strong>Reusable</strong></li>
+                <li><i class="fa-solid fa-recycle"></i> <span>Type:</span> <strong>Second-hand</strong></li>
+            </ul>
+
+            <div class="description-section">
+                <h3>Description</h3>
+                <div class="description-box">
+                    Clean and reusable plastic bottle. Good for daily use and helpful for reducing plastic waste.
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-primary btn-lg btn-buy"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                <button class="btn btn-secondary btn-lg btn-share"><i class="fa-solid fa-share-nodes"></i> Share</button>
+            </div>
+
+            <div class="manage-section" style="margin-top: 30px; padding-top: 20px; border-top: 1px dashed var(--border-color);">
+                <h4 style="margin-bottom: 15px; color: var(--text-light); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Manage Product</h4>
+                <div style="display: flex; gap: 10px;">
+                    <a href="#" id="editBtn" class="btn btn-outline" style="flex: 1; justify-content: center;"><i class="fa-solid fa-pen"></i> Edit</a>
+                    <button id="deleteBtn" class="btn btn-outline" style="flex: 1; justify-content: center; color: #dc2626; border-color: #fca5a5;"><i class="fa-solid fa-trash"></i> Delete</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="logo">
+                <i class="fa-solid fa-recycle logo-icon"></i>
+                <div class="logo-text">
+                    <span class="brand-name">RecycleHub</span>
+                    <span class="brand-tagline">Reduce Waste. Reuse More.</span>
+                </div>
+            </div>
+            <div class="footer-links-wrapper">
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li>|</li>
+                    <li><a href="products.html">Products</a></li>
+                    <li>|</li>
+                    <li><a href="add-product.html">Add Product</a></li>
+                    <li>|</li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/product-details.js"></script>
+</body>
+</html>
