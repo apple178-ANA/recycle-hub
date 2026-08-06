@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product - RecycleHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-recycle logo-icon"></i>
+                <div class="logo-text">
+                    <span class="brand-name">RecycleHub</span>
+                    <span class="brand-tagline">Smart Resale System</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="products.html"><i class="fa-solid fa-box"></i> Products</a></li>
+                <li><a href="add-product.html" class="active"><i class="fa-solid fa-plus-circle"></i> Add Product</a></li>
+                <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Form Section -->
+    <main class="container mt-30 mb-60">
+        <div class="form-container">
+            <div class="form-header">
+                <div class="form-icon-circle add-icon">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="form-title-group">
+                    <h2>Add Product</h2>
+                    <p>List your reusable or second-hand product for sale.</p>
+                </div>
+            </div>
+
+            <form class="product-form" action="#" method="POST">
+                <div class="form-group full-width">
+                    <label for="productName">Product Name</label>
+                    <input type="text" id="productName" placeholder="Enter product name" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <option value="" disabled selected>Select category</option>
+                            <option value="Furniture">Furniture</option>
+                            <option value="Plastic">Plastic</option>
+                            <option value="Books">Books</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Electronics">Electronics</option>
+                        </select>
+                    </div>
+                    <div class="form-group half-width">
+                        <label for="price">Price (৳)</label>
+                        <input type="number" id="price" placeholder="Enter price" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="sellerName">Seller Name</label>
+                        <input type="text" id="sellerName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group half-width">
+                        <label for="condition">Condition</label>
+                        <select id="condition" required>
+                            <option value="" disabled selected>Select condition</option>
+                            <option value="Used">Used</option>
+                            <option value="Reusable">Reusable</option>
+                            <option value="New">New</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Product Image</label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="productImage" class="file-input" accept="image/*">
+                        <label for="productImage" class="file-label">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <span>Upload a photo of your product</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="4" placeholder="Enter product description" required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <a href="products.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to Products</a>
+                    <button type="submit" class="btn btn-solid"><i class="fa-solid fa-plus"></i> Add Product</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="logo">
+                <i class="fa-solid fa-recycle logo-icon"></i>
+                <div class="logo-text">
+                    <span class="brand-name">RecycleHub</span>
+                    <span class="brand-tagline">Reduce Waste. Reuse More.</span>
+                </div>
+            </div>
+            <div class="footer-links-wrapper">
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li>|</li>
+                    <li><a href="products.html">Products</a></li>
+                    <li>|</li>
+                    <li><a href="add-product.html">Add Product</a></li>
+                    <li>|</li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/form-handler.js"></script>
+</body>
+</html>
