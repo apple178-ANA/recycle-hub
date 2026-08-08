@@ -90,6 +90,105 @@
         </div>
     </section>
 
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="payment-modal-overlay">
+        <div class="payment-modal">
+            <div class="payment-modal-header">
+                <h2>Complete Payment</h2>
+                <button id="closePaymentModal" class="close-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="payment-modal-body">
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-item">
+                        <span id="summaryProductName">Product Name</span>
+                        <span id="summaryProductPrice" class="summary-price">৳0</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total Amount</span>
+                        <span id="summaryTotalAmount">৳0</span>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="payment-methods-section">
+                    <h3>Select Payment Method</h3>
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="bkash" checked>
+                            <div class="payment-card bkash-card">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                                <span>bKash</span>
+                            </div>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="nagad">
+                            <div class="payment-card nagad-card">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <span>Nagad</span>
+                            </div>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="rocket">
+                            <div class="payment-card rocket-card">
+                                <i class="fa-solid fa-rocket"></i>
+                                <span>Rocket</span>
+                            </div>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="bank">
+                            <div class="payment-card bank-card">
+                                <i class="fa-solid fa-building-columns"></i>
+                                <span>Bank Account</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Payment Instructions (Dynamic) -->
+                <div id="paymentInstructions" class="payment-instructions">
+                    <div class="instruction-box">
+                        <h4><i class="fa-solid fa-circle-info"></i> Payment Instructions</h4>
+                        <p id="instructionText">Please send money to our bKash Personal Number:</p>
+                        <div class="account-number-display">
+                            <span id="accountNumber">017XXXXXXXX</span>
+                            <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('accountNumber').innerText); showToast('Number copied!', 'success');"><i class="fa-regular fa-copy"></i> Copy</button>
+                        </div>
+                        <p class="instruction-note">After completing the payment, enter the Transaction ID below.</p>
+                    </div>
+                </div>
+
+                <!-- Transaction & Customer Info -->
+                <div class="payment-form">
+                    <div class="form-group">
+                        <label for="transactionId">Transaction ID <span class="required">*</span></label>
+                        <input type="text" id="transactionId" placeholder="e.g. 9F3G8K2M1P" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerName">Your Name <span class="required">*</span></label>
+                        <input type="text" id="customerName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPhone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="customerPhone" placeholder="Enter your phone number" required>
+                    </div>
+                    
+                    <!-- Security Notice -->
+                    <div class="security-notice">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <p>We do not collect or store your PIN, OTP, Password, or Card Security Code. Only the Transaction ID is required for verification.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="payment-modal-footer">
+                <button id="confirmPaymentBtn" class="btn btn-primary btn-block">Confirm Payment</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-container">
