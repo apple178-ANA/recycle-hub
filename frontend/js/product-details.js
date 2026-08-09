@@ -93,11 +93,125 @@ document.addEventListener('DOMContentLoaded', () => {
     const descBox = document.querySelector('.description-box');
     if (descBox) descBox.textContent = product.description;
 
+    // Payment Modal Elements
+    const paymentModal = document.getElementById('paymentModal');
+    const closePaymentModal = document.getElementById('closePaymentModal');
+    const confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
+    const paymentOptions = document.querySelectorAll('input[name="paymentMethod"]');
+    
+    // Instruction Elements
+    const instructionText = document.getElementById('instructionText');
+    const accountNumber = document.getElementById('accountNumber');
+    
+    // Form Inputs
+    const transactionId = document.getElementById('transactionId');
+    const customerName = document.getElementById('customerName');
+    const customerPhone = document.getElementById('customerPhone');
+
+    // Payment Methods Info
+    const paymentInfo = {
+        bkash: {
+            text: 'Please send money to our bKash Personal Number:',
+            number: '01711223344'
+        },
+        nagad: {
+            text: 'Please send money to our Nagad Personal Number:',
+            number: '01922334455'
+        },
+        rocket: {
+            text: 'Please send money to our Rocket Personal Number:',
+            number: '01833445566'
+        },
+        bank: {
+            text: 'Please transfer money to our Bank Account:',
+            number: 'DBBL Acc: 123.456.7890'
+        }
+    };
+
+    // Handle Payment Method Change
+    if (paymentOptions.length > 0) {
+        paymentOptions.forEach(option => {
+            option.addEventListener('change', (e) => {
+                const method = e.target.value;
+                instructionText.textContent = paymentInfo[method].text;
+                accountNumber.textContent = paymentInfo[method].number;
+            });
+        });
+    }
+
     // Action Buttons
     const buyBtn = document.querySelector('.btn-buy');
     if (buyBtn) {
         buyBtn.addEventListener('click', () => {
-            showToast('Added to cart successfully!', 'success');
+            if (paymentModal) {
+                // Populate summary
+                document.getElementById('summaryProductName').textContent = product.name;
+                document.getElementById('summaryProductPrice').textContent = `৳${product.price}`;
+                document.getElementById('summaryTotalAmount').textContent = `৳${product.price}`;
+                
+                // Set default bKash info just in case
+                document.querySelector('input[name="paymentMethod"][value="bkash"]').checked = true;
+                instructionText.textContent = paymentInfo.bkash.text;
+                accountNumber.textContent = paymentInfo.bkash.number;
+
+                // Show modal
+                paymentModal.classList.add('active');
+            } else {
+                showToast('Added to cart successfully!', 'success');
+            }
+        });
+    }
+
+    // Close Modal
+    if (closePaymentModal) {
+        closePaymentModal.addEventListener('click', () => {
+            paymentModal.classList.remove('active');
+        });
+    }
+    
+    // Close on outside click
+    if (paymentModal) {
+        paymentModal.addEventListener('click', (e) => {
+            if (e.target === paymentModal) {
+                paymentModal.classList.remove('active');
+            }
+        });
+    }
+
+    // Confirm Payment Submit
+    if (confirmPaymentBtn) {
+        confirmPaymentBtn.addEventListener('click', () => {
+            // Validate inputs
+            if (!transactionId.value.trim() || !customerName.value.trim() || !customerPhone.value.trim()) {
+                showToast('Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            // Show loading state
+            const originalText = confirmPaymentBtn.innerHTML;
+            confirmPaymentBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Processing...';
+            confirmPaymentBtn.disabled = true;
+            
+            // Simulate verification delay
+            setTimeout(() => {
+                confirmPaymentBtn.innerHTML = originalText;
+                confirmPaymentBtn.disabled = false;
+                
+                paymentModal.classList.remove('active');
+                
+                // Clear form
+                transactionId.value = '';
+                customerName.value = '';
+                customerPhone.value = '';
+                
+                // Reset to default payment method
+                document.querySelector('input[name="paymentMethod"][value="bkash"]').checked = true;
+                instructionText.textContent = paymentInfo.bkash.text;
+                accountNumber.textContent = paymentInfo.bkash.number;
+                
+                // Success message
+                showToast('Payment submitted successfully! Your transaction is being verified.', 'success');
+            }, 1500);
         });
     }
     
