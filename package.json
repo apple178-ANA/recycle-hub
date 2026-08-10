@@ -1,0 +1,25 @@
+{
+  "name": "recycle-hub",
+  "version": "1.0.0",
+  "description": "> **RecycleHub** is a smart desktop marketplace that enables users to buy, sell, and exchange recyclable materials and reusable (second-hand) products, promoting sustainability, reducing waste, and supporting a circular economy.",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apple178-ANA/recycle-hub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/apple178-ANA/recycle-hub/issues"
+  },
+  "homepage": "https://github.com/apple178-ANA/recycle-hub#readme",
+  "devDependencies": {
+    "electron": "^43.2.0"
+  }
+}
